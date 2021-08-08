@@ -10,4 +10,8 @@ class SongrApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test public void testAlbumConstructor(){
+		Album album = new Album("Italian Album","Dean Martin",6,8000,"https://m.media-amazon.com/images/I/41SJ7JWCCBL._SY580_.jpg");
+
+	}
 }

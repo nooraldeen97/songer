@@ -1,0 +1,26 @@
+
+html{
+background-color:whitesmoke;
+}
+
+body{
+text-align:center;
+}
+
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+div{
+    border: solid 2px gray;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 30px;
+
+}
+
+h1,h2,h3{
+    text-align: center;
+}
