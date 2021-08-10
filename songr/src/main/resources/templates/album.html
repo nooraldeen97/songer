@@ -6,9 +6,34 @@
     <link rel="stylesheet"  href="albums.css" />
 </head>
 <body>
-<h1> Here is Our Almubs</h1>
+<form action="#" th:action="@{/albums}" th:object="${albumClass}" method="post">
+    <fieldset>
+        <legend> Add your Album </legend>
+        <label>Title : </label>
+        <input type="text" th:field="*{title}"><br><br>
+        <label> Artist :</label>
+        <input type="text" th:field="*{artist}"><br><br>
+        <label> SongCount :</label>
+        <input type="number" th:field="*{songCount}"><br><br>
+        <label> Length :</label>
+        <input type="number" th:field="*{length}"><br><br>
+        <label>ImageURL : </label>
+        <input type="text" th:field="*{imageURL}"><br><br>
+        <input type="submit" value="Add" ><br><br>
+    </fieldset>
+</form>
+
+<h1> Here is Our Albums</h1>
 <div th:each="album : ${allAlbum}">
 <img  th:src="${album.imageURL}"/>
+    <h2> Title : <span th:text="${album.title}"></span></h2>
+    <h2> Artist Name : <span th:text="${album.artist}"></span></h2>
+    <h3 > length : <span th:text="${album.length}"></span></h3>
+</div>
+
+
+<div th:each="album : ${addedAlbum}">
+    <img  th:src="${album.imageURL}"/>
     <h2> Title : <span th:text="${album.title}"></span></h2>
     <h2> Artist Name : <span th:text="${album.artist}"></span></h2>
     <h3 > length : <span th:text="${album.length}"></span></h3>
