@@ -1,12 +1,24 @@
 package com.example.songr;
 
-//title, an artist, a songCount, a length (in seconds), and an imageUrl
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
     private String artist;
     private int songCount;
     private int length;
     private String imageURL;
+
+    public Album(){
+
+    }
 
     public Album(String title, String artist, int songCount, int length, String imageURL) {
         this.title = title;
@@ -54,5 +66,13 @@ public class Album {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
