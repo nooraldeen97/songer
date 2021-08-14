@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> here is the Album </h1>
+<div>
+  <img  th:src="${theAlbum.imageURL}"/>
+  <h2> Title : <span th:text="${theAlbum.title}"></span></h2>
+  <h2> Artist Name : <span th:text="${theAlbum.artist}"></span></h2>
+  <h3 > length : <span th:text="${theAlbum.length}"></span></h3>
+</div>
+
+<form action="#" th:action="@{'/albums/' + ${theAlbum.id}}" th:object="${songClass}" method="post">
+    <fieldset>
+        <legend> Add your Album </legend>
+        <label>Title : </label>
+        <input type="text" th:field="*{title}"><br><br>
+        <label> Length :</label>
+        <input type="number" th:field="*{length}"><br><br>
+        <label> Track Number :</label>
+        <input type="number" th:field="*{trackNumber}"><br><br>
+        <input type="submit" value="Add" ><br><br>
+
+    </fieldset>
+</form>
+
+<div th:each="song : ${addedSongs}">
+
+    <h2> Title : <span th:text="${song.title}"></span></h2>
+    <h2> Track Number  : <span th:text="${song.trackNumber}"></span></h2>
+    <h3 > length : <span th:text="${song.length}"></span></h3>
+
+</div>
+</body>
+</html>
