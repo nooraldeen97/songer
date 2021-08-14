@@ -29,6 +29,9 @@
     <h2> Title : <span th:text="${album.title}"></span></h2>
     <h2> Artist Name : <span th:text="${album.artist}"></span></h2>
     <h3 > length : <span th:text="${album.length}"></span></h3>
+<!--    <button type="button" th:onclick="@{'/albums/{id}'(id=${album.id})}" th:method="getSpecificAlbum">view Album</button>-->
+   <h4> <a th:href="'/albums/' + ${album.id}"> view Album <a/> <h4/>
+
 </div>
 
 
@@ -37,6 +40,9 @@
     <h2> Title : <span th:text="${album.title}"></span></h2>
     <h2> Artist Name : <span th:text="${album.artist}"></span></h2>
     <h3 > length : <span th:text="${album.length}"></span></h3>
+<!--    <button type="button" th:onclick="@{'/albums/{id}'(id=${album.id})}" th:method="getSpecificAlbum">view Album</button>-->
+    <a th:href="'/albums/' + ${album.id}">view Album<a/>
+
 </div>
 </body>
 </html>

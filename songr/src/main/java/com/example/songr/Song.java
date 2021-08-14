@@ -13,18 +13,18 @@ public class Song {
     private int trackNumber;
 
     @ManyToOne
-    private Album albumSong;
+    private Album album;
 
     // this constructor for the Id generation
-    private Song(){
+    public Song(){
 
     }
 
-    public Song(String title, int length, int trackNumber, Album albumSong) {
+    public Song(String title, int length, int trackNumber, Album album) {
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
-        this.albumSong = albumSong;
+        this.album = album;
     }
 
     public int getId() {
@@ -60,10 +60,10 @@ public class Song {
     }
 
     public Album getAlbumSong() {
-        return albumSong;
+        return album;
     }
 
     public void setAlbumSong(Album albumSong) {
-        this.albumSong = albumSong;
+        this.album = albumSong;
     }
 }
